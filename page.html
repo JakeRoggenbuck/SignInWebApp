@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+.inputStyle {
+  font-family: 'Roboto', sans-serif;
+  color: #686868;
+  background-color: #ffffff;
+  font-size: 15px;
+  border-radius: 6px;
+  border-color: #262626;
+  text-align: center;
+  width: 60%;
+  height: 60px;
+  margin: 10px;
+}
+
+.signInButton {
+  font-family: 'Roboto', sans-serif;
+  color: #ededed;
+  background-color: #21a6f6;
+  font-size: 15px;
+  border-radius: 6px;
+  border-color: #21a6f6;
+  text-align: center;
+  width: 60%;
+  height: 60px;
+  margin: 10px;
+}
+
+.titleStyle {
+  font-family: 'Roboto', sans-serif;
+  color: #262626;
+  font-size: 35px;
+}
+
+    </style>
+  </head>
+  <body>
+    <div align="center">
+      <h1 class="titleStyle">Sign In</h1>
+      <input class="inputStyle" id="username" type="text" placeholder="Username">
+      <input class="inputStyle" id="password" type="password" placeholder="Password">
+      <button class="signInButton" id="signInButton">Sign In</button>
+    </div>
+    <script>
+      document.getElementById("signInButton").addEventListener("click",doStuff);
+      function doStuff(){
+        var usernameCheck = document.getElementById("username").value
+        var passwordCheck = document.getElementById("password").value
+        google.script.run.userClicked(usernameCheck, passwordCheck);
+        document.getElementById("password").value = "";
+      }
+    </script>
+  </body>
+</html>
